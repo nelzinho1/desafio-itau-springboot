@@ -22,9 +22,6 @@ public class StatisticsResponse {
         this.max = stats.getMax();
     }
 
-    public StatisticsResponse(long count, double sum, double average, double min, double max) {
-    }
-
     public long getCount() {
         return count;
     }

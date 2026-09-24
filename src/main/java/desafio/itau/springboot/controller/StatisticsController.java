@@ -15,24 +15,16 @@ public class StatisticsController {
 
     private final TransactionServices transactionServices;
 
-    public StatisticsController(TransactionServices transactionServices){
+    public StatisticsController(TransactionServices transactionServices) {
         this.transactionServices = transactionServices;
     }
 
     @GetMapping
-    public ResponseEntity<StatisticsResponse> getStatistics(){
+    public ResponseEntity<StatisticsResponse> getStatistics() {
 
         DoubleSummaryStatistics statistics =
                 transactionServices.getStatistics();
 
-        StatisticsResponse response= new StatisticsResponse(
-                statistics.getCount(),
-                statistics.getSum(),
-                statistics.getAverage(),
-                statistics.getMin(),
-                statistics.getMax()
-        );
-
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok(new StatisticsResponse(statistics));
     }
 }
