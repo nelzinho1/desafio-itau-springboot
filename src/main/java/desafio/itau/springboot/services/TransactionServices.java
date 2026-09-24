@@ -33,7 +33,7 @@ public class TransactionServices {
     public DoubleSummaryStatistics getStatistics() {
         //usar o offsetdatetime pra pegar data atual, nao precisa instanciar ela dar o new pois ela nao e classe é um metodo statico
         OffsetDateTime now = OffsetDateTime.now();
-      //  System.out.println("AGORA: " + now);
+        //  System.out.println("AGORA: " + now);
 
         //o retorno das statistcs tem que fazer um lambida com stream nas transactions
         return transactions.stream()

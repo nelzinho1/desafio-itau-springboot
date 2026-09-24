@@ -14,7 +14,7 @@ public class StatisticsResponse {
 
     private double max;
 
-    public StatisticsResponse (DoubleSummaryStatistics stats) {
+    public StatisticsResponse(DoubleSummaryStatistics stats) {
         this.count = stats.getCount();
         this.sum = stats.getSum();
         this.avg = stats.getAverage();
